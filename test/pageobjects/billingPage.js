@@ -17,7 +17,7 @@ class Billingpage extends Common{
         this.$cvvNum=()=>$('#cvv');
         this.$submitButton=()=>$('//input[@value="Continue to checkout"]');
        }
-       async billingDetails(){
+       async billingDetail(){
         await this.$firstName().setValue('Alen');
         await this.$email().setValue('abc@gmail.com');
         await this.$address().setValue('asdfghjkl');
