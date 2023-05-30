@@ -2,9 +2,9 @@ const Common=require('./common');
 class Homepage extends Common{
     constructor(){
         super();
-        this.$contactHeader=()=>$('(//a[contains(text(),"Contact Us")])[2]');
+        this.$Header=()=>$('(//a[contains(text(),"Contact Us")])[2]');
         this.$fname=()=>$('//input[@placeholder="Full Name "]');
-        this.$email=()=>$('//input[@placeholder="Email"]');
+        this.$gmail=()=>$('//input[@placeholder="Email"]');
         this.$phoneNum=()=>$('//input[@placeholder="Phone number"]');
         this.$msg=()=>$('//input[@placeholder="Message"]');
         this.$btn=()=>$('//button[contains(text(),"SEND")]');
