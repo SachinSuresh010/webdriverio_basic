@@ -8,7 +8,7 @@ describe('End to end workflow of MavenKonnect',()=>{
     it('User able to load the url',async()=>{
         await homePage.openUrl();
         expect(await homePage.$pageHeader().isDisplayed()).toBe(true,'Page header should be displayed');
-    })
+    });
 
     it('Click on Contact Page',async()=>{
         await homePage.contact();
@@ -22,19 +22,19 @@ describe('End to end workflow of MavenKonnect',()=>{
         await browser.acceptAlert();
         await browser.pause(4000);
         expect(await homePage.$thankHeader().isDisplayed()).toBe(true,'Header should be displayed');
-    })
+    });
 
     it('Click on watches',async()=>{
         await cartPage.AddToCart();
         expect(await billingPage.$billingHeader().isDisplayed()).toBe(true,'Header should be displayed');
 
-    })
+    });
 
     it('FIll the details of the customer',async()=>{
         await billingPage.billingDetails();
         await browser.acceptAlert();
         await browser.pause(4000);
-    })
+    });
 
     
 })
