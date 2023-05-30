@@ -2,8 +2,8 @@ const Common=require('./common');
 class Cartpage extends Common{
     constructor(){
         super();
-        this.$cartButton=()=>$('//a[text()=" Watches "]')
-        this.$cartSymbol=()=>$('//a[@href="cart.html"]')
+        this.$cartButton=()=>$('//a[text()=" Watches "]');
+        this.$cartSymbol=()=>$('//a[@href="cart.html"]');
     }
     async AddToCart(){
         await this.$cartButton().click();

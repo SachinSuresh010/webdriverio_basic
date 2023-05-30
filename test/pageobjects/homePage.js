@@ -17,11 +17,12 @@ class Homepage extends Common{
     async fillDetails()
     {
         await this.$fname().setValue("Alen");
-        await this.$email().setValue('alem@gmail.com')
-        await this.$phoneNum().setValue('9876655433')
-        await this.$msg().setValue('qwerttyyuuiioplkkjjhgfddswwedrrt');
+        
+        await this.$email().setValue('alennn@gmail.com')
+        await this.$phoneNum().setValue('9877655433')
+        await this.$msg().setValue('ttyyuuiikjjhgfddswwedrrt');
         await this.$btn().click();
-        await browser.pause(2000);
+        
 
     }
 }
