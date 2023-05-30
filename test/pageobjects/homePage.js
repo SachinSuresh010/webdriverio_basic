@@ -12,6 +12,7 @@ class Homepage extends Common{
     }
     async contact(){
         await this.$contactHeader().click();
+        await this.waitForLoad();
         
     }
     async fillDetails()
