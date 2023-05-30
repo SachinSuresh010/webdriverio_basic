@@ -7,6 +7,6 @@ module.exports=class Common{
         await browser.url('https://demotmwebsite.github.io/');
         await browser.maximizeWindow();
         await this.$pageHeader().waitForDisplayed(10000,true);
-    
+        
     }
 }

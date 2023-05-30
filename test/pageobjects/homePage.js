@@ -1,4 +1,5 @@
 const Common=require('./common');
+
 class Homepage extends Common{
     constructor(){
         super();
@@ -24,7 +25,7 @@ class Homepage extends Common{
         await browser.pause(2000);
 
     }
-}
+  }
 module.exports={
     homePage:new Homepage()
 }

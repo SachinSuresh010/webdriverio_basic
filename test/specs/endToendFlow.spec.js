@@ -1,4 +1,4 @@
-const {homePage} = require("../pageobjects/homePage")
+const {homePage} = require("../pageobjects/homePage");
 const {cartPage}=require("../pageobjects/cartPage");
 const {billingPage} = require("../pageobjects/billingPage");
 

@@ -1,4 +1,4 @@
-const Common=require('./common');
+const Common=require('./common')
 class Cartpage extends Common{
     constructor(){
         super();
@@ -11,5 +11,5 @@ class Cartpage extends Common{
     }
 }
 module.exports={
-    cartPage:new Cartpage()
+  cartPage:new Cartpage() 
 }

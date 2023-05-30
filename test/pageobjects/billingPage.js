@@ -1,9 +1,9 @@
-const Common=require('./common');
+const Common=require('./common')
 const randomNumbers = require('random-numbers')
 class Billingpage extends Common{
     constructor(){
         super();
-        this.$billingHeader=()=>$('//h1[text()="Check Out karo !"]');
+        this.$Header=()=>$('//h1[text()="Check Out karo !"]');
         this.$firstName=()=>$('#fname');
         this.$email=()=>$('#email');
         this.$address=()=>$('#adr');
