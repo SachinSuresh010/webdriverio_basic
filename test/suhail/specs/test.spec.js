@@ -22,10 +22,10 @@ describe("Launch the url and verify the tab functions", () => {
 
     it("Enter the valid datas in the required feilds" , async () => {
         await loginPage.fillTextBoxFeilds(fullName,address,email);
-        // expect (await loginPage.$verifyTextBoxFeild()).toBeDisplayed(fullName);
-        // expect (await loginPage.$verifyTextBoxFeild()).toBeDisplayed(email);
-        // expect (await loginPage.$verifyTextBoxFeild()).toBeDisplayed();
-        // expect (await loginPage.$verifyTextBoxFeild()).toBeDisplayed();
+        expect (await loginPage.$verifyTextBoxFeild()).toBeDisplayed(fullName);
+        expect (await loginPage.$verifyTextBoxFeild()).toBeDisplayed(email);
+        expect (await loginPage.$verifyTextBoxFeild()).toBeDisplayed();
+        expect (await loginPage.$verifyTextBoxFeild()).toBeDisplayed();
 
     });
 
