@@ -31,10 +31,14 @@ describe('End to end workflow of MavenKonnect',()=>{
     })
 
     it('FIll the details of the customer',async()=>{
-        await billingPage.billingDetails();
+        await billingPage.billingdeeetails();
         await browser.acceptAlert();
-        await browser.pause(4000);
+        await browser.pause(40000);
     })
+
+    it('This is my samlpe it block', async()=>{
+        
+    });
 
     
 })
