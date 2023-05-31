@@ -1,0 +1,14 @@
+{
+  "demoQaUrl": "https://demoqa.com/",
+  "fullName": "Romeo Juliet",
+  "currentAddress": "Current Flat - 13b-16501 rossario",
+  "permanentAddress": "Permanent Flat - 13b-16501 New Jersey",
+  "flag": ["input", "text"],
+  "firstName": "Romeo",
+  "lastName": "Juliet",
+  "age": "45",
+  "salary": "25000",
+  "department": "QA",
+  "pdfFilePath": "test/jithin/files/",
+  "pdfFileName": "testPdfFile.pdf"
+}
