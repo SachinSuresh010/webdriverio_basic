@@ -1,6 +1,6 @@
 const { loginPage } = require("../page-objects/test.js");
 
-fdescribe("Basic flow of EDelivery Application", () => {
+describe("Basic flow of EDelivery Application", () => {
 
   it("Open URL and load the application", async () => {
     await loginPage.openUrl("https://edelivery.zoproduct.com/");
