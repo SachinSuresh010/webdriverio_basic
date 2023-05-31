@@ -33,4 +33,4 @@ class LoginPage
 module.exports = 
 {
     loginPage : new LoginPage()
-}
+} 

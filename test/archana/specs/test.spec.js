@@ -1,6 +1,6 @@
 const {loginPage}= require('../page-objects/test-file.js');
 
-describe('Basic folw of edDelivery',()=>{
+fdescribe('Basic folw of edDelivery',()=>{
     
     it('open url and load the application', async()=>{
         await browser.maximizeWindow();
