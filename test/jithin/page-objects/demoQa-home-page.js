@@ -1,15 +1,10 @@
 /****************************************************
  *                     Imports                      *
  ****************************************************/
-import fs from "fs";
-import downloadsFolder from "downloads-folder";
-import deleteFiles from "delete-files";
-import elementsPage from "./elements-page.js";
-
-let downloadFolderPath = downloadsFolder();
+const { elementsPage } = require("./elements-page.js");
 
 class DemoQA {
-    
+  
   constructor() {
     /**
      * Elements
@@ -18,10 +13,7 @@ class DemoQA {
     this.$homeBanner = () => $('//div[@class="home-banner"]');
     this.$homePageContent = () => $('//img[@alt="Selenium Online Training"]');
     this.$downloadButton = () => $('//a[text()="Download"]');
-    this.$elementsIcon = () =>
-      $(
-        '//div[@class="category-cards"]//div[1]//div[1]//div[2]//*[name()="svg"]'
-      );
+    this.$elementsIcon = () => $('//h5[normalize-space()="Elements"]');
   }
 
   /**
@@ -54,8 +46,6 @@ class DemoQA {
   }
 }
 
-module.exports = 
-{
-  demoPage : new DemoQA()
-}
-
+module.exports = {
+  demoPage: new DemoQA(),
+};

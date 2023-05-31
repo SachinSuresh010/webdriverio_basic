@@ -9,7 +9,7 @@ const fs = require("fs");
 let downloadFolderPath = downloadsFolder();
 
 class UploadAndDownloadPage extends Common {
-    
+  
   constructor() {
     super();
     /**
@@ -48,7 +48,7 @@ class UploadAndDownloadPage extends Common {
     if (await this.isFileExist()) {
       await this.deleteFile();
     }
-    await this.$downloadButton().waitForClickable({timeout:10000});
+    await this.$downloadButton().waitForClickable({ timeout: 10000 });
     await this.$downloadButton().click();
     await browser.waitUntil(
       async function () {
@@ -69,8 +69,6 @@ class UploadAndDownloadPage extends Common {
   }
 }
 
-module.exports = 
-{
-  uploadDownloadPage : new UploadAndDownloadPage()
-}
-
+module.exports = {
+  uploadDownloadPage: new UploadAndDownloadPage(),
+};

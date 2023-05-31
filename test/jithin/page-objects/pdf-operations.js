@@ -1,12 +1,11 @@
 /****************************************************
  *                     Imports                      *
  ****************************************************/
-import pdfKit from "pdfkit";
-import fs from "fs";
-import deleteFiles from "delete-files";
+const pdfKit = require("pdfkit");
+const fs = require("fs");
+const deleteFiles = require("delete-files");
 
 var newPdf = new pdfKit();
-let fileExistsBoolean;
 
 class PdfOperations {
   
@@ -27,27 +26,6 @@ class PdfOperations {
   }
 
   /**
-   * Method to check whether a file is exist at path.
-   * @returns true or false
-   */
-  async fileStatus(path) {
-    if (fs.existsSync(path)) {
-      fileExistsBoolean = true;
-    } else {
-      fileExistsBoolean = false;
-    }
-    return fileExistsBoolean;
-  }
-
-  /**
-   * Method to add content in pdf file.
-   */
-  async addDataToPdf() {
-    newPdf.text("Newly created pdf.");
-    newPdf.end();
-  }
-
-  /**
    * Method to delete pdf file at path: "pdfFIlePath".
    * @param {String} pdfFilePath
    */
@@ -59,8 +37,6 @@ class PdfOperations {
   }
 }
 
-module.exports = 
-{
-  pdfOperations : new PdfOperations()
-}
-
+module.exports = {
+  pdfOperations: new PdfOperations(),
+};

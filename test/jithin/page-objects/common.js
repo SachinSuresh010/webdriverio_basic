@@ -1,5 +1,5 @@
 module.exports = class Common {
-
+  
   constructor() {
     /**
      * Elements
@@ -30,11 +30,11 @@ module.exports = class Common {
    * @param {String} option
    */
   async clickOnElements(option) {
-    await this.$elementsOptions(option).scrollIntoView({block:'center'});
+    await this.$elementsOptions(option).scrollIntoView({ block: "center" });
     await this.$elementsOptions(option).click();
     await this.$elementsleftPanel().waitForDisplayed({
       timeout: 10000,
       timeoutMsg: "Wait time for text box page header to be displayed.",
     });
   }
-}
+};

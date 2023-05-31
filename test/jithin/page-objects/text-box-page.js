@@ -4,7 +4,7 @@
 const Common = require("./common.js");
 
 class TextBoxPage extends Common {
-
+  
   constructor() {
     super();
     /**
@@ -33,13 +33,11 @@ class TextBoxPage extends Common {
    * Method to click on submit button.
    */
   async clickOnSubmit() {
-    await browser.scroll(0, 200);
+    await this.$submitButton().scrollIntoView({ block: "center" });
     await this.$submitButton().click();
   }
 }
 
-module.exports = 
-{
-  textBoxPage : new TextBoxPage()
-}
-
+module.exports = {
+  textBoxPage: new TextBoxPage(),
+};

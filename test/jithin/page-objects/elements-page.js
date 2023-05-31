@@ -4,7 +4,7 @@
 const Common = require("./common.js");
 
 class ElementsPage extends Common {
-
+  
   constructor() {
     super();
     /**
@@ -14,7 +14,6 @@ class ElementsPage extends Common {
   }
 }
 
-module.exports = 
-{
-  elementsPage : new ElementsPage()
-}
+module.exports = {
+  elementsPage: new ElementsPage(),
+};

@@ -1,10 +1,10 @@
 /****************************************************
  *                     Imports                      *
  ****************************************************/
-const Common = require( "./common.js");
+const Common = require("./common.js");
 
 class WebTablesPage extends Common {
-
+  
   constructor() {
     super();
     /**
@@ -58,7 +58,7 @@ class WebTablesPage extends Common {
    * Method to click on submit button.
    */
   async submitButtonClick() {
-    await browser.scroll(0, 200);
+    await await this.$submitButton().scrollIntoView({ block: "center" });
     await this.$submitButton().click();
   }
 
@@ -80,17 +80,15 @@ class WebTablesPage extends Common {
    * Method to extract each column values from search results.
    */
   async getFieldData(fieldData) {
-    let resultSet=await this.$$searchResults().map((item) => item.getText());
-    return await resultSet.filter((item) => item === fieldData)
+    let resultSet = await this.$$searchResults().map((item) => item.getText());
+    return await resultSet.filter((item) => item === fieldData);
   }
 
-  async deleteEntry(name){
+  async deleteEntry(name) {
     await this.$deleteEntry(name).click();
   }
 }
 
-module.exports = 
-{
-  webTablesPage : new WebTablesPage()
-}
-
+module.exports = {
+  webTablesPage: new WebTablesPage(),
+};

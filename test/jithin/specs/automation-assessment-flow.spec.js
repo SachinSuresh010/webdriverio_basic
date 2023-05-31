@@ -1,21 +1,21 @@
 /****************************************************
  *                     consts                      *
  ****************************************************/
-const testData = require( "../environments/qat/testData.json",assert { type: "json" }) ;
-const buttonsPage = require( "../pageobjects/buttons-page.js");
-const demoPage = require( "../pageobjects/demoQa-home-page.js");
-const elementsPage = require( "../pageobjects/elements-page.js");
-const textBoxPage = require( "../pageobjects/text-box-page.js");
-const uploadDownloadPage = require( "../pageobjects/upload-download-page.js");
-const pdfOperations = require( "../pageobjects/pdf-operations.js");
-const webTablesPage = require( "../pageobjects/web-tables-page.js");
+const testData = require("../environments/qat/testData.json");
+const { buttonsPage } = require("../page-objects/buttons-page.js");
+const { demoPage } = require("../page-objects/demoQa-home-page.js");
+const { elementsPage } = require("../page-objects/elements-page.js");
+const { textBoxPage } = require("../page-objects/text-box-page.js");
+const { uploadDownloadPage } = require("../page-objects/upload-download-page.js");
+const { pdfOperations } = require("../page-objects/pdf-operations.js");
+const { webTablesPage } = require("../page-objects/web-tables-page.js");
 
 let splittedValue,
   randomNumber = Math.floor(Math.random() * 1000),
-  randomEmail = `${testData.firstName}${randomNumber}@mailsac.com`,inputArray=[ "Romeo", "Juliet", "45", `${randomEmail}`, "25000", "QA" ]
-  
-describe("Automation Assessment 1.", () => {
+  randomEmail = `${testData.firstName}${randomNumber}@mailsac.com`;
 
+describe("Automation Assessment 1.", () => {
+  
   it(`Navigate to ${testData.demoQaUrl} and load the application in a new chrome window.`, async () => {
     await demoPage.openUrl(testData.demoQaUrl);
     expect(await demoPage.$pageIcon()).toBeDisplayed();
@@ -155,13 +155,12 @@ describe("Automation Assessment 1.", () => {
   it(`Click on search box field and search for age "${testData.age}".`, async () => {
     await webTablesPage.search(testData.age);
     let resultSet = await webTablesPage.getFieldData(testData.age);
-    for (let item of resultSet)
-      expect(await item).toBe(testData.age);
+    for (let item of resultSet) expect(await item).toBe(testData.age);
   });
 
-  it('Clear search field and delete last entry.',async()=>{
+  it("Clear search field and delete last entry.", async () => {
     await webTablesPage.search(" ");
     await webTablesPage.deleteEntry(testData.firstName);
     expect(await webTablesPage.$deleteEntry()).not.toBeDisplayed();
-  })
+  });
 });
