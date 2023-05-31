@@ -15,7 +15,7 @@ let splittedValue,
   randomEmail = `${testData.firstName}${randomNumber}@mailsac.com`;
 
 describe("Automation Assessment 1.", () => {
-  
+
   it(`Navigate to ${testData.demoQaUrl} and load the application in a new chrome window.`, async () => {
     await demoPage.openUrl(testData.demoQaUrl);
     expect(await demoPage.$pageIcon()).toBeDisplayed();
@@ -24,7 +24,7 @@ describe("Automation Assessment 1.", () => {
 
   it('Scroll down to "Elements" and click on "Elements".', async () => {
     await demoPage.scrollToElementsAndClick();
-    expect(await elementsPage.$elementsleftPanel()).toBeDisplayed();
+    expect(await elementsPage.$elementsLeftPanel()).toBeDisplayed();
     expect(await textBoxPage.$elementsItemHeader().getText()).toBe("Elements");
   });
 

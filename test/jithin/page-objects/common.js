@@ -1,5 +1,5 @@
 module.exports = class Common {
-  
+
   constructor() {
     /**
      * Elements
@@ -9,7 +9,7 @@ module.exports = class Common {
         `//div[@class='element-list collapse show']//li/span[text()="${option}"]`
       );
     this.$elementsItemHeader = () => $('//div[@class="main-header"]');
-    this.$elementsleftPanel = () => $('//div[@class="left-pannel"]');
+    this.$elementsLeftPanel = () => $('//div[@class="left-pannel"]');
   }
 
   /**
@@ -32,7 +32,7 @@ module.exports = class Common {
   async clickOnElements(option) {
     await this.$elementsOptions(option).scrollIntoView({ block: "center" });
     await this.$elementsOptions(option).click();
-    await this.$elementsleftPanel().waitForDisplayed({
+    await this.$elementsLeftPanel().waitForDisplayed({
       timeout: 10000,
       timeoutMsg: "Wait time for text box page header to be displayed.",
     });
