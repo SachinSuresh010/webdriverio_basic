@@ -1,12 +1,16 @@
 class Buttonspage{
     constructor(){
-        this.$buttonsBtn = () => $('//span[text()="Buttons"]')
-        this.$buttonsHeader = () => $('//div[@class="main-header"]')
+        this.$buttonBtn = () => $('//span[text()="Buttons"]')
+        this.$buttonHeader = () => $('//div[@class="main-header"]')
         this.$doubleClick = () => $('#doubleClickBtn')
         this.$verifyDoubleClick = () => $('#doubleClickMessage')
         this.$rightClick = () => $('#rightClickBtn')
         this.$verifyRightClick = () => $('#rightClickMessage')
     }
+
+    /**
+     * Click on the "Buttons" button. 
+     */
 async clickButtonPage(){
     await this.$buttonsBtn().scrollIntoView();
     await this.$buttonsBtn().click();
