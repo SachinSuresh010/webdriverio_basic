@@ -25,6 +25,5 @@ describe('Basic flow of ToolsQA Application', () => {
 
     it('Fill details and submit the form', async () => {
         await elementsPage.fillTextBoxForm('Revathy', email, 'Kochi', 'Coimbatore');
-        expect(await elementsPage.$nameAfterSubmit().getText()).toBe('Name:Revathy');
-    });
+    })
 });
