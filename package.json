@@ -18,6 +18,9 @@
         "wdio": "wdio run wdio.conf.js"
     },
     "dependencies": {
+        "delete-files": "^0.1.0",
+        "downloads-folder": "^3.0.3",
+        "pdfkit": "^0.13.0",
         "random-numbers": "^1.0.8"
     }
 }
