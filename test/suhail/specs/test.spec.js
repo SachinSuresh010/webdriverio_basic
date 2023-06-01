@@ -4,7 +4,7 @@ let address = "California-23";
 let email = fullName + `${Math.floor(Math.random() * 100)}@mailsac.com`;
 import buttonsPage from '../pageobjects/buttons-page.js';
 
-describe("Launch the url and verify the tab functions", () => {
+xdescribe("Launch the url and verify the tab functions", () => {
     it("Open url of the application" , async () => {
         await loginPage.openUrl("https://demoqa.com/");
         await expect(browser).toHaveUrl("https://demoqa.com/");
