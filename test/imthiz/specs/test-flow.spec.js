@@ -1,18 +1,14 @@
 const { homePage } = require("../page-objects/home-page.js");
 const { elementsPage } = require("../page-objects/elements-page.js");
 const { textBoxPage } = require("../page-objects/text-box-page.js");
-const { randomNumber } = require("random-numbers");
+const randomNumber = require("random-numbers");
 const { buttonPage } = require("../page-objects/button-page.js");
 const {
   uploadDownloadPage,
 } = require("../page-objects/upload-download-page.js");
 const { webTablePage } = require("../page-objects/web-table-page.js");
 
-let rNumber = randomNumber({
-  min: 1000,
-  max: 9999,
-  integer: true,
-});
+let rNumber = randomNumber.create(1000,9999);
 let firstName = "Imdhiz";
 let lastName = "Rahiman";
 let fullName = firstName + lastName;

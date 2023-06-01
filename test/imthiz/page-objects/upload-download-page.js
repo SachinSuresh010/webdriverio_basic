@@ -1,7 +1,7 @@
-const { pdfKit } = require("pdfkit");
-const { downloadsFolder } = require("downloads-folder");
-const { fs } = require("fs");
-const { webTablePage } = require("../page-objects/web-table-page.js");
+const pdfKit = require("pdfkit");
+const downloadsFolder = require("downloads-folder");
+const fs = require("fs");
+const { webTablePage } = require("./web-table-page.js");
 
 let filePath = downloadsFolder();
 

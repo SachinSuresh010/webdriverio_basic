@@ -1,4 +1,4 @@
-const { elementsPage } = require("../page-objects/elements-page.js");
+const { elementsPage } = require("./elements-page.js");
 
 class HomePage {
   constructor() {

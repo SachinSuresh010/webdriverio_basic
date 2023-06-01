@@ -1,4 +1,4 @@
-const { buttonPage } = require("../page-objects/button-page.js");
+const { buttonPage } = require("./button-page.js");
 
 class TextBox {
   constructor() {

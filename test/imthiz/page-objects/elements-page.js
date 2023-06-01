@@ -1,4 +1,4 @@
-const { textBoxPage } = require("../page-objects/text-box-page.js");
+const { textBoxPage } = require("./text-box-page.js");
 
 class Elements {
   constructor() {
@@ -18,5 +18,5 @@ class Elements {
   }
 }
 module.exports = {
-  elementPage: new ElementPage(),
+  elementPage: new Elements(),
 };

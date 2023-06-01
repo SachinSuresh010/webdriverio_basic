@@ -1,6 +1,6 @@
 const {
   uploadDownloadPage,
-} = require("../page-objects/upload-download-page.js");
+} = require("./upload-download-page.js");
 
 class ButtonPage {
   constructor() {
