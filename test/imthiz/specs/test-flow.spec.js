@@ -54,10 +54,9 @@ describe("Basic e2E flow with filter and clear filter", () => {
         .$productParentConfirmation(testData.productParentName)
         .getText()
     ).toBe(testData.productParentName);
-    let flag = await searchResultsPage.filteredProductChecker(testData.productParentName);
+    let flag = await searchResultsPage.filteredProductChecker(
+      testData.productParentName
+    );
     expect(flag).toBe(true);
-    
   });
-
-
 });
