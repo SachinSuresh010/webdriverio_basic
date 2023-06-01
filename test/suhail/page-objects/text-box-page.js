@@ -6,11 +6,8 @@ class TextBox {
     this.$texteBoxHeader = () => $('//div[@class="main-header"]')
     this.$textBoxFeild = (feildName) => $(`#${feildName}`)
     this.$clickTextBoxSubmit = () => $('#submit')
-    // this.$verifyTextBoxFeild = (verifyFeildName) => $(`#${verifyFeildName}`)
+    this.$verifyTextBoxFeild = (verifyFeildName) => $(`#${verifyFeildName}`)
     this.$verifyTextBoxFullName = () => $('#name')
-    // this.$verifyTextBoxEmail = () => $('#email')
-    // this.$verifyTextBoxCurrentAddress = () => $('')
-    // this.$verifyTextBoxPermenentAddress = () => $('')
    }
 
   async openUrl(url) {
