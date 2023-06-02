@@ -1,5 +1,5 @@
 module.exports = class Common {
-
+  
   constructor() {
     /**
      * Elements
@@ -15,15 +15,15 @@ module.exports = class Common {
   /**
    * Methods
    */
-  
+
   /**
    * Method to load the url in a new maximized browser window.
    * @param {String} url
    */
-  async openUrl(url) {
+  async openUrl(url, $selector) {
     await browser.url(url); // opens a browser window and navigate to url
     await browser.maximizeWindow(); // maximize browser window
-    await this.$header().waitForDisplayed({
+    await $selector.waitForDisplayed({
       timeout: 5000,
       timeoutMsg: "wait time for home page header to be displayed",
     });
@@ -35,15 +35,8 @@ module.exports = class Common {
    * @returns true if array elements are in descending order else false
    */
   async sortChecker(array) {
-    let flag = true;
-    array = array.map((item) => item.slice(1));
-    array = array.map((item) => item.replace(/[,]/g, ""));
+    array = array.map((item) => item.replace(/₹|,/g, ""));
     array = array.map((item) => parseInt(item));
-    for (let i = 0; i < array.length; i++) {
-      if (array[i] < array[i + 1]) {
-        flag = false;
-      }
-    }
-    return flag;
+    return array.slice(1).every((item, index) => item <= array[index]);
   }
 };

@@ -1,6 +1,8 @@
 {
   "url": "https://www.flipkart.com/",
+  "mailsacUrl" : "https://mailsac.com/",
   "searchKeyWord": "mobiles",
   "filterBrand" : "APPLE",
-  "filterMaxPrice" : 30000
+  "filterMaxPrice" : 30000,
+  "email" : "testemail93"
 }

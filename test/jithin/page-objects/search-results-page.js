@@ -31,6 +31,9 @@ class SearchResultsPage extends Common {
     this.$filterBrandResults = (brandName) =>
       $(`//a//div[contains(text(),"${brandName}")]`);
     this.$waitAnimation = () => $('//*[name()="circle"]');
+    this.$clearAllButton = () => $('//span[text()="Filters"]/../..//span[text()="Clear all"]');
+    this.$filterLabel = (label) => $(`//div[@class="_3ztiZO"]/div[text()="${label}"]`);
+    this.$filterSpecificClearAll = () => $('//div[@class="HbxufK"]/span');
   }
 
   /**
@@ -83,7 +86,15 @@ class SearchResultsPage extends Common {
     let resultList = await this.$$brandNameOfItems(brandName).map((item) =>
       item.getText()
     );
-    return resultList.every((item) => item.includes(brandName));
+    return resultList.every((item) => item.toUpperCase().includes(brandName));
+  }
+
+  /**
+   * Method to click on clear all button.
+   */
+  async clickOnClearAll(){
+    await this.$clearAllButton().click();
+    await this.$clearAllButton().waitForDisplayed({reverse:true});
   }
 }
 

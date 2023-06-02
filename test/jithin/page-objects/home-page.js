@@ -2,9 +2,12 @@
  *                     imports                      *
  ****************************************************/
 const { searchResultsPage } = require("../page-objects/search-results-page.js");
+const Common = require("./common.js");
 
-class HomePage {
+class HomePage extends Common{
+
   constructor() {
+    super();
     /**
      * Elements
      */
@@ -12,24 +15,13 @@ class HomePage {
     this.$searchBox = () => $('//input[@name="q"]');
     this.$loginPopUpCloseButton = () => $('//button[@class="_2KpZ6l _2doB4z"]');
     this.$searchIcon = () => $('//button[@type="submit"]');
+    this.$userNameLoginPopUp = () => $('//input[@class="_2IX_2- VJZDxU"]');
+    this.$requestOtp = () => $('//button[@class="_2KpZ6l _2HKlqd _3AWRsL"]');
   }
 
   /**
    * Methods
    */
-
-  /**
-   * Method to open a browser window and navigate to url.
-   * @param {String} url
-   */
-  async openUrl(url) {
-    await browser.maximizeWindow();
-    await browser.url(url);
-    await this.$loginPopUpCloseButton().waitForDisplayed({
-      timeout: 10000,
-      timeoutMsg: "Wait time for login popup to be displayed.",
-    });
-  }
 
   /**
    * Method to close login popup.

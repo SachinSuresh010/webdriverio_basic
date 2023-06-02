@@ -7,8 +7,10 @@ const { searchResultsPage } = require("../page-objects/search-results-page");
 
 describe(`Search for "${testData.searchKeyWord}" and filter for "${testData.filterBrand}" brand, "${testData.filterMaxPrice}" maximum price validation.`, () => {
   it(`Navigate to "${testData.url}" and load the application in a new chrome window.`, async () => {
-    await homePage.openUrl(testData.url);
-    expect(await homePage.$homePageIcon()).toBeDisplayed();
+    await homePage.openUrl(testData.url, homePage.$loginPopUpCloseButton());
+    expect(await homePage.$homePageIcon())
+      .withContext("Expect home page icon to be displayed.")
+      .toBeDisplayed();
     expect(browser).toHaveUrl(testData.url);
   });
 
@@ -46,5 +48,12 @@ describe(`Search for "${testData.searchKeyWord}" and filter for "${testData.filt
       testData.filterBrand
     );
     expect(isBrandFilterSelected).toBe(true);
+  });
+
+  it('Click on "Clear All" button.', async () => {
+    await searchResultsPage.clickOnClearAll();
+    expect(await searchResultsPage.$clearAllButton().isDisplayed())
+      .withContext('Expect "Clear All" option not to be displayed')
+      .toBe(false);
   });
 });
