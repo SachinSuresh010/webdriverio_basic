@@ -42,7 +42,7 @@ class Login {
 }
 
 module.exports = {
-    login: new Login();
+    login: new Login()
 }
 
 

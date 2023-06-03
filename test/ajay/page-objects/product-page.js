@@ -105,5 +105,5 @@ class Product {
   }
   
   module.exports = {
-        product: new Product();
+        product: new Product()
   }
