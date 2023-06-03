@@ -27,7 +27,6 @@ describe('Basic flow for flipkart', ()=>{
       await productPage.clickPriceDropdown();
       let result = await productPage.priceValidationForSelectedPrice()
       expect(result).toBe(true);
-
     });
 
 });             
