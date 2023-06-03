@@ -1,40 +1,40 @@
 const {homePage} = require ('../page-objects/home-page.js');
-const {loginPage} = require ('../page-objects/login-page.js');
-let productName = "Sauce Labs Backpack";
-let firstName = checkoutPage.getRandomLetters(6);
-let lastName =  checkoutPage.getRandomLetters(6);
-let zipCode = Math.floor(Math.random() * 1000000);
+const testData=require('../test-data/test-data.json');
+describe("basic flow of the flipkart application ",()=>{
+  it ('Open the url and load the application',async()=>{
+    await homePage.openUrl(testData.url);
+    await expect(browser).toHaveUrl("https://www.flipkart.com/");
+});
 
-describe("Basic flow of the swag lab application", () => {
-  it("Open the url and load the application ", async () => {
-    await loginPage.openUrl("https://www.saucedemo.com/");
-    await expect(browser).toHaveUrl("https://www.saucedemo.com/");
-  });
+it('Search for the mobile phones in search bar',async()=>{
+await homePage.searchItem(testData.searchBarInput);
+expect(await homePage.$productCatagoryHeader()).toBeDisplayed();
+});
 
-  it("Provide the username and password ,click on login button ", async () => {
-    await loginPage.loginToApplication("standard_user", "secret_sauce");
-    expect(await loginPage.$homePageHeader().toBeDisplayed);
-    await expect(browser).toHaveUrl("https://www.saucedemo.com/inventory.html");
-  });
-  it("add an item to the cart ", async () => {
-    await homePage.addToCartClick(productName);
-    expect(await homePage.$addToCartIcon(productName).getText()).toBe("Remove");
-    expect(await homePage.$CartIcon().getText()).toBe("1");
-  });
+it(`Click "${testData.sortOption}" sort option`, async()=>{
+  await homePage.priceHighToLowClick();
+ expect (await homePage.orderCheck()).toBe(true);
+ 
+});
 
-  it("Add one more item to the cart and verify the number of items showing in cart icon", async () => {
-    await homePage.$addToCartIcon("Sauce Labs Bike Light").click();
-    expect(await homePage.$CartIcon().getText()).toBe("2");
-  });
+it('select the maximum price as "30000"from the drop down ',async()=>{
+await homePage.filterSelection();
+expect (await homePage.sortedPriceList()).toBe(true);
+});
 
-  it("click on the cart icon and verify the redirected page", async () => {
-    await homePage.cartIconClick();
-    await expect(browser).toHaveUrl("https://www.saucedemo.com/cart.html");
-  });
-
-  it("click on checkout icon and verify the redirected page", async () => {
-    await homePage.checkOutIconclick();
-    expect(await homePage.$checkoutPageHeader().isDisplayed());
-  });
+it('select "apple" in brand section and select one apple phone from the list ',async()=>{
+await homePage.brandSelectCheckBox();
+expect(await homePage.$appleBrandCheckBox().isSelected());
 
 });
+it('validating the brand name listed is only "Apple"',async()=>{
+  let resultSet=await homePage.getValueFromTable();
+  expect(resultSet.every(item=>item.includes('APPLE'))).toBe(true);
+});
+
+it('Click on "CLEAR ALL" in filter section and verify all the the applied filters has been removed',async()=>{
+ expect(await homePage.$clearAllClick().getText()).toBe("Clear all");
+});
+
+});
+
