@@ -21,7 +21,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
-        './test/specs/**/*.js'
+        './test/dona/spec/flipkart.spec.js'
     ],
     // Patterns to exclude.
     exclude: [
