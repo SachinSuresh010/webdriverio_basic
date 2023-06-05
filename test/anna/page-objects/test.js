@@ -7,7 +7,7 @@ class LoginPage {
   }
 
   /**
-   * open url and launch the application.
+   * open url and launch the application on the browser.
    * @param {string} url
    */
   async openUrl(url) {
